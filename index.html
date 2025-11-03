@@ -125,24 +125,21 @@
 
         main {
             background: rgba(255, 255, 255, 0.97);
-            padding: 3rem 2.5rem;
+            padding: 2rem; /* 1 unit of space within the box before text starts */
             border-radius: 8px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            margin: 2rem 0;
+            margin: 2rem; /* 1 unit of space around the white box */
         }
         
         .quote {
             font-style: italic;
             text-align: center;
-            margin: 1.5rem 0 0.5rem;
             color: #555;
         }
         
         .quoter {
             font-style: normal;
             text-align: right;
-            margin: 0.25rem 0 1.5rem;
-            padding-right: 0.75rem; /* matches abstract side padding */
             color: #555;
         }
         
@@ -150,12 +147,9 @@
             background: #f8f9fa;
             text-align: justify;
             text-justify: inter-word;
-            padding: 1.25rem 0.75rem; /* Reduced from 1.5rem to 0.75rem */
-            margin: 1.5rem 0;
             font-style: normal;
             line-height: 1.6;
             hyphens: auto;
-            border-radius: 8px;
             color: #333;
         }
         
@@ -163,27 +157,21 @@
         @media (min-width: 768px) {
             .abstract {
                 word-spacing: -0.02em;
-                padding: 1.5rem 0.75rem; /* Reduced from 1.5rem to 0.75rem */
                 line-height: 1.7;
-            }
-            
-            .quoter {
-                padding-right: 0.75rem; /* matches desktop abstract padding */
             }
         }
         
         /* Mobile */
         @media (max-width: 767px) {
-            .abstract {
-                word-spacing: normal;
-                padding: 1.25rem 0.625rem; /* Reduced from 1.25rem to 0.625rem */
-                margin: 1rem 0;
-                line-height: 1.6;
-                hyphens: none;
+            main {
+                padding: 1rem; /* half unit within box */
+                margin: 1rem; /* half unit around box */
             }
             
-            .quoter {
-                padding-right: 0.625rem; /* matches mobile abstract padding */
+            .abstract {
+                word-spacing: normal;
+                line-height: 1.6;
+                hyphens: none;
             }
         }
 
