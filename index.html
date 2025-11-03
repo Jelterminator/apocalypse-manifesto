@@ -235,48 +235,28 @@
         }
         
         .crypto-list p {
-          font-family: 'Courier New', monospace;
           font-size: 0.85rem;
           line-height: 1.6;
           margin: 0.4rem 0;
           opacity: 0.8;
-          word-break: break-all;
         }
         
         .support-message {
           margin-bottom: 0.75rem;
-          opacity: 0.85;
-          font-family: 'Latin Modern Roman', 'Computer Modern Serif', 'Times New Roman', serif;
+          opacity: 0.8;
           font-size: 0.9rem;
           line-height: 1.5;
+        }
+        
+        .crypto-address {
+          font-family: 'Courier New', monospace;
+          word-break: break-all;
         }
         
         .copyright {
           margin-top: 1.5rem;
           opacity: 0.7;
           font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            main {
-                padding: 2rem 1.5rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                min-width: 100%;
-            }
         }
     </style>
 </head>
@@ -306,13 +286,13 @@
         <footer>        
             <div class="crypto-list">
                 <p class="support-message">Although reading is enough, support is welcomed and appreciated.</p>
-                <p>Bitcoin: bc1qvvqp9ph3mpc9s9fxujl42skdyp4krgf2qg8486</p>
-                <p>Ethereum: 0x8c162cB302c4880C2955fd30155150D4c2dB2a07</p>
-                <p>Solana: GHnLGgNfv95sy4a4TwN4jTuujJHq6SGTaCyy3mYoRUtU</p>
+                <p>Bitcoin: <span class="crypto-address">bc1qvvqp9ph3mpc9s9fxujl42skdyp4krgf2qg8486</span></p>
+                <p>Ethereum: <span class="crypto-address">0x8c162cB302c4880C2955fd30155150D4c2dB2a07</span></p>
+                <p>Solana: <span class="crypto-address">GHnLGgNfv95sy4a4TwN4jTuujJHq6SGTaCyy3mYoRUtU</span></p>
             </div>
-    
+        
             <p class="copyright">Copyright © 2024 Max Flow MC. All rights reserved.</p>
-        </footer>
+        </footer>    
     </div>
 </body>
 </html>
