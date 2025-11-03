@@ -1,4 +1,4 @@
 # apocalypse-manifesto.nl
-Website to download the eco-manifesto on.
+Website to download my eco-manifesto on.
 
-Alternative link https://jelterminator.github.io/apocalypse-manifesto/
+Alternative link: https://jelterminator.github.io/apocalypse-manifesto/
