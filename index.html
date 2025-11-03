@@ -132,57 +132,58 @@
         }
         
         .quote {
-          font-style: italic;
-          text-align: center;
-          margin: 1.5rem 0 0.5rem;
-          color: #555;
+            font-style: italic;
+            text-align: center;
+            margin: 1.5rem 0 0.5rem;
+            color: #555;
         }
         
         .quoter {
-          font-style: normal;
-          text-align: right;
-          margin: 0.25rem 0 1.5rem;
-          padding-right: 0.5rem; /* keeps consistent edge with abstract */
-          color: #555;
-        }
-
-        .quoter {
+            font-style: normal;
             text-align: right;
-            margin: 0.5rem 1.25rem 1.5rem; /* matches .abstract side padding */
+            margin: 0.25rem 0 1.5rem;
+            padding-right: 0.75rem; /* matches abstract side padding */
             color: #555;
         }
         
         .abstract {
-          background: #f8f9fa;
-          padding: 1.25rem 1.5rem;
-          margin: 1.5rem 0;
-          font-style: normal;
-          line-height: 1.6;
-          hyphens: auto;
-          border-radius: 8px;
-          color: #333;
+            background: #f8f9fa;
+            text-align: justify;
+            text-justify: inter-word;
+            padding: 1.25rem 0.75rem; /* Reduced from 1.5rem to 0.75rem */
+            margin: 1.5rem 0;
+            font-style: normal;
+            line-height: 1.6;
+            hyphens: auto;
+            border-radius: 8px;
+            color: #333;
         }
-
+        
         /* Desktop */
         @media (min-width: 768px) {
             .abstract {
-                text-align: justify;
-                text-justify: inter-word;
                 word-spacing: -0.02em;
-                padding: 1.5rem;
+                padding: 1.5rem 0.75rem; /* Reduced from 1.5rem to 0.75rem */
                 line-height: 1.7;
+            }
+            
+            .quoter {
+                padding-right: 0.75rem; /* matches desktop abstract padding */
             }
         }
         
         /* Mobile */
         @media (max-width: 767px) {
             .abstract {
-                text-align: left;
                 word-spacing: normal;
-                padding: 1.25rem;
+                padding: 1.25rem 0.625rem; /* Reduced from 1.25rem to 0.625rem */
                 margin: 1rem 0;
                 line-height: 1.6;
                 hyphens: none;
+            }
+            
+            .quoter {
+                padding-right: 0.625rem; /* matches mobile abstract padding */
             }
         }
 
