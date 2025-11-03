@@ -16,11 +16,15 @@
             font-family: 'Computer Modern Serif', 'Latin Modern Roman', 'Times New Roman', serif;
             line-height: 1.6;
             color: #000;
+            /* Sticky footer setup */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Background styles */
             background: 
         linear-gradient(135deg, rgba(15, 32, 39, 0.85) 0%, rgba(32, 58, 67, 0.85) 50%, rgba(44, 83, 100, 0.85) 100%),
         url('GLOBE---1850-2024-MO.png') repeat-y center top;
             background-size: auto, 100% auto;
-            min-height: 100vh;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
         }
@@ -29,6 +33,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
+            flex-grow: 1; /* Allows container to push footer down */
         }
 
         header {
@@ -66,15 +71,35 @@
 
         .abstract {
             background: #f8f9fa;
-            padding: 1.5rem;
-            border-left: 4px solid #2c5364;
-            margin: 2rem 0;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
             font-style: normal;
-            text-align: justify;
-            text-justify: inter-word;
-            line-height: 1.7;
+            line-height: 1.6;
             hyphens: auto;
-            word-spacing: -0.05em;
+            border-radius: 8px;
+        }
+        
+        /* Desktop */
+        @media (min-width: 768px) {
+            .abstract {
+                text-align: justify;
+                text-justify: inter-word;
+                word-spacing: -0.02em;
+                padding: 1.5rem;
+                line-height: 1.7;
+            }
+        }
+        
+        /* Mobile */
+        @media (max-width: 767px) {
+            .abstract {
+                text-align: left;
+                word-spacing: normal;
+                padding: 1.25rem;
+                margin: 1rem 0;
+                line-height: 1.6;
+                hyphens: none;
+            }
         }
 
         .cta-buttons {
@@ -107,87 +132,56 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: #2c5364;
-            border: 2px solid #2c5364;
-        }
-
-        .btn-secondary:hover {
-            background: #2c5364;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .contents {
-            margin: 2rem 0;
-        }
-
-        .contents h2 {
-            color: #2c5364;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #2c5364;
-            padding-bottom: 0.5rem;
-        }
-
-        .contents-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .contents-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .part-title {
-            font-weight: bold;
-            color: #2c5364;
-            margin-top: 1rem;
-        }
-
-        .support {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin: 2rem 0;
-            border: 1px solid #ffc107;
-        }
-
-        .support h3 {
-            color: #856404;
-            margin-bottom: 1rem;
-        }
-
-        .crypto-addresses {
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            background: white;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-            border-radius: 3px;
-            word-break: break-all;
-        }
-
         footer {
             text-align: center;
             color: white;
             padding: 2rem 0;
-            opacity: 0.8;
+            flex-shrink: 0;
+        }
+
+        .copyright {
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-message {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+        
+        .crypto-list {
+            display: inline-block;
+            text-align: left;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .crypto-list p {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 0.25rem 0;
+            opacity: 0.75;
+            word-break: break-all;
         }
 
         .quote {
             font-style: italic;
             text-align: center;
-            margin: 1rem 1rem;
-            padding: 0.5rem;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
             color: #555;
         }
         .quoter {
             font-style: normal;
             text-align: right;
-            margin: 0 2rem;
-            padding: 0.5rem;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
             color: #555;
         }
 
@@ -223,10 +217,11 @@
         </header>
 
         <main>
+            <!-- Quote Alignment is now purely controlled by the main's 2.5rem padding -->
             <div class="quote"> "In short, our world needs climate action on all fronts—everything, everywhere, all at once."</div>
             <div class="quoter"> — António Guterres, Secretary-General of the United Nations</div>
             <div class="abstract">
-                <strong>ABSTRACT:</strong> Do not panic!—and slow down. Circa 2,500,000,000 years ago the first plant breathed in carbon dioxide and mostly this was released back into the air, but every time some form of life got buried underground some carbon left the air and the climate cooled a little. Eventually a lot was buried making Earth liveable for life as we know it. Then man sucked hell empty and set its demons free: by burning fossil fuels the CO2 concentration has increased by half over the past 200 years—notice the difference in scale. Now, temperatures have risen +1.5K and without action they will rise for centuries. We are crossing a threshold of melting ice and receding forest, which reinforce global warming, once crossed we are locked-in for +10K. Besides, now plastic pollution causes miscarriages, and globally reef ecosystems collapse, and within decades civilisation ends in hunger, and this century the last human may choke. As humanity copes with the beginning of global warming, it shows that we must do everything to stay below cataclysmic levels of heating. Severe technological intervention at an unparalleled scale and deep cultural and political reformation are required if mankind is to live.
+                <strong>ABSTRACT:</strong> Do not panic!—and slow down. Circa $2,500,000,000$ years ago the first plant breathed in carbon dioxide and mostly this was released back into the air, but every time some form of life got buried underground some carbon left the air and the climate cooled a little. Eventually a lot was buried making Earth liveable for life as we know it. Then man sucked hell empty and set its demons free: by burning fossil fuels the $\text{CO}_2$ concentration has increased by half over the past $200$ years—notice the difference in scale. Now, temperatures have risen $+1.5\text{K}$ and without action they will rise for centuries. We are crossing a threshold of melting ice and receding forest, which reinforce global warming, once crossed we are locked-in for $+10\text{K}$. Besides, now plastic pollution causes miscarriages, and globally reef ecosystems collapse, and within decades civilisation ends in hunger, and this century the last human may choke. As humanity copes with the beginning of global warming, it shows that we must do everything to stay below cataclysmic levels of heating. Severe technological intervention at an unparalleled scale and deep cultural and political reformation are required if mankind is to live.
                 <br><br>
                 This book wants to ignite the inner activist in everyone and can be of interest to anyone living in the Earth's ecosystem. It was also written for those technically capable or gifted with good scientific understanding, so that they may develop a clear picture of the problem and apply themselves accordingly. These are problems bigger than any one mind can comprehend let alone solve, we will need all of the greatest minds working on this. Beyond that, for the world to not end, there is a crucial role to be played by influencers of every type—from mothers to presidents—because all have to change their ways, so too the delusional and the disassociated. Yet there is hope. All these problems have solutions, which are feasible provided the vast amounts of labour to be done. If the Egyptians could build the Pyramids then humanity as a whole can save the planet. Do not go gentle into this dark night.
             </div>
@@ -235,14 +230,18 @@
                 <a href="APOCALYPSE_MANIFESTO_V7.pdf" class="btn btn-primary" download>Download PDF (Free)</a>
             </div>
         </main>
-        <footer>
-            <p>Copyright © 2024 Max Flow MC. All rights reserved.</p>
-            <p></p>
-            <p> Reading is enough. Further support is possible and appreciated.</p>
-            <p> Bitcoin: bc1qvvqp9ph3mpc9s9fxujl42skdyp4krgf2qg8486</p>
-            <p> Ethereum: 0x8c162cB302c4880C2955fd30155150D4c2dB2a07</p>
-            <p> Solana: GHnLGgNfv95sy4a4TwN4jTuujJHq6SGTaCyy3mYoRUtU</p>
-        </footer>
     </div>
+    <!-- Footer is now outside the container for sticky functionality -->
+    <footer>
+        <p class="support-message">Reading is enough. Further support is possible and appreciated.</p>
+        
+        <div class="crypto-list">
+            <p>Bitcoin: bc1qvvqp9ph3mpc9s9fxujl42skdyp4krgf2qg8486</p>
+            <p>Ethereum: 0x8c162cB302c4880C2955fd30155150D4c2dB2a07</p>
+            <p>Solana: GHnLGgNfv95sy4a4TwN4jTuujJHq6SGTaCyy3mYoRUtU</p>
+        </div>
+
+        <p class="copyright">Copyright © 2024 Max Flow MC. All rights reserved.</p>
+    </footer>
 </body>
 </html>
